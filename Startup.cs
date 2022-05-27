@@ -31,9 +31,9 @@
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo
+                options.SwaggerDoc("v2", new OpenApiInfo
                 {
-                    Title = "moviesWebAPI", Version = "v1"
+                    Title = "moviesWebAPI", Version = "v2"
                 });
                 options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme {
                     Name = "Authorization",
@@ -92,7 +92,7 @@
                     .AllowAnyHeader();
             });
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "moviesWebAPI v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "moviesWebAPI v2"));
 
             app.UseHttpsRedirection();
 
